@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href='https://unpkg.com/boxicons@latest/css/boxicons.min.css'>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./travel.css">
+  <title>DSTrips</title>
+</head>
+
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo"><a href="#">Dream<span>Scape</span>Trips</a></div>
+
+      <ul class="links">
+        <li><a href="./homepage.html">Home</a></li>
+        <li><a href="./Tours.html">Tours</a></li>
+        <li><a href="./homepage.html">Service</a></li>
+        <li>
+          <a href="./destinations.html">Destinations</a>
+          <ul class="dropdown-content">
+            <li><a href="#">Option 1</a></li>
+            <li><a href="#">Option 2</a></li>
+            <li><a href="#">Option 3</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Travel Tips</a></li>
+        <li><a href="#">Blogs</a></li>
+        <li><a href="#">About us</a></li>
+      </ul>
+      <a href="#" class="action_btn">Register Now</a>
+      <div class="toggle_btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+
+    <div class="dropdown_menu">
+      <li><a href="./homepage.html">Home</a></li>
+        <li><a href="./Tours.html">Tours</a></li>
+        <li><a href="./homepage.html">Service</a></li>
+        <li><a href="./destinations.html">Destinations</a></li>
+        <li><a href="#">Travel Tips</a></li>
+        <li><a href="#">Blogs</a></li>
+        <li><a href="#">About us</a></li>
+      <li><a href="#" class="action_btn">Register Now</a></li>
+    </div>
+
+  </header>
+
+  <main>
+    hello
+  </main>
+
+  <footer>
+    <div class="address">
+      <p>Our Terms and Conditions</p>
+      <p>FAQ |  Support</p>
+    </div>
+    <div class="copyright">
+      <p>
+        Kigali, Rwanda &copy; 2023 DreamScapeTrips | All rights reserved. <br>
+        Website Design |Graphic Design | Social Media Management | Online Marketing | Web App Developer 
+      </p>
+    </div>
+    <div class="social-links">
+      <p>Contact Us Here</p>
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      <p>
+        Tel: (+250)781963232 <br>
+        info@dreamscapetrips.com <br>
+        bookings@dreamscapetrips.com
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const toggleBtn = document.querySelector('.toggle_btn')
+    const toggleBtnIcon = document.querySelector('.toggle_btn i')
+    const dropDownMenu = document.querySelector('.dropdown_menu')
+
+    toggleBtn.onclick = function () {
+      dropDownMenu.classList.toggle('open')
+      const isOpen = dropDownMenu.classList.contains('open')
+
+      toggleBtnIcon.classList = isOpen
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
+    } 
+  </script>
+</body>
+
+</html>
