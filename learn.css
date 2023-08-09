@@ -1,0 +1,64 @@
+body{
+  padding: 0;
+  /* background: linear-gradient(cyan, #000000); */
+  background-image: url("https://images.unsplash.com/photo-1687320329586-67daaba48ffd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1548&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.navigation{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  padding: 0;
+  backdrop-filter: blur(1000px);
+  height: 10%;
+}
+
+.navigation li{
+  list-style: none;
+}
+
+.navigation li a{
+  font-style: none;
+  text-decoration: none;
+}
+
+.links{
+  display: flex;
+  gap: 3rem;
+}
+
+.links li a{
+  color: aqua;
+}
+
+.logo{
+  font-size: 2rem;
+  margin-left: 3rem;
+}
+
+#get-started{
+  font-size: 15px;
+  margin-right: 3rem;
+  border: 10px;
+  height: 20px;
+  width: 90px;
+  padding: 10px;
+  margin: 10px;
+  background-color: bisque;
+  backdrop-filter: blur(1000px);
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+#get-started:hover{
+  color: tomato;
+}
+
+span{
+  color: green;
+}

@@ -125,6 +125,87 @@ header{
   justify-content: center;
 }
 
+.contact-form {
+  background-color: #b2aaaa;
+  padding: 20px;
+  margin: 50px auto;
+  width: 600px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 24px;
+  margin-top: 2px;
+  color: #10101a;
+}
+
+h3 {
+  font-size: 16px;
+  margin-bottom: 2rem;
+}
+
+hr {
+  margin-bottom: 2rem;
+  border: 1px solid #ccc;
+}
+
+form {
+  margin-top: 10px;
+  background-color: #b2aaaa;
+  padding: 20px;
+  margin: 50px auto;
+  border-radius: 5px;
+}
+
+h2{
+  margin-top: 2rem;
+  color: #10101a;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+label {
+  width: 200px; 
+  padding-right: 10px;
+  text-align: right;
+  font-weight: bold;
+  color: var(--bg-color);
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="url"], textarea {
+  flex: 1; 
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 35px;
+  background-color: #f8f8f8;
+  color: var(--bg-color);
+}
+
+input[type="radio"], input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+button#cancelButton {
+  background-color: #eea2a2;
+  margin-left: 10px;
+}
+
 /* footer */
 
 

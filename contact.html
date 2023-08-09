@@ -24,19 +24,28 @@
 
       <ul class="links">
         <li><a href="./homepage.html">Home</a></li>
-        <li><a href="./Tours.html">Tours</a></li>
-        <li><a href="./homepage.html">Service</a></li>
-        <li>
-          <a href="./destinations.html">Destinations</a>
+        <li><a href="/Tours.html">Tours</a></li>
+        <li><a href="#services">Service</a></li>
+        <li class="dropdown">
+          <a href="./destinations.html">Destinations <i class="fa-solid fa-circle-chevron-down"></i></a>
           <ul class="dropdown-content">
-            <li><a href="#">Option 1</a></li>
-            <li><a href="#">Option 2</a></li>
-            <li><a href="#">Option 3</a></li>
+            <li><a href="#">Rwanda</a></li>
+            <li><a href="#">Congo</a></li>
+            <li><a href="#">Uganda</a></li>
+            <li><a href="#">Asia</a></li>
+            <li><a href="#">Europe</a></li>
           </ul>
         </li>
-        <li><a href="./TravelTips.html">Travel Tips</a></li>
+        <li class="dropdown">
+          <a href="./TravelTips.html">Travel Tips <i class="fa-solid fa-circle-chevron-down"></i></a>
+          <ul class="dropdown-content">
+            <li><a href="#">Guides</a></li>
+            <li><a href="#">Visa</a></li>
+          </ul>
+        </li>
         <li><a href="./Blogs.html">Blogs</a></li>
-        <li><a href="#">About us</a></li>
+        <li><a href="./Aboutus.html">About us</a></li>
+        <li><a href="./contact.html">Contact us</a></li>
       </ul>
       <a href="#" class="action_btn">Register Now</a>
       <div class="toggle_btn">
@@ -45,44 +54,78 @@
     </div>
 
     <div class="dropdown_menu">
-      <li><a href="./homepage.html">Home</a></li>
-        <li><a href="./Tours.html">Tours</a></li>
-        <li><a href="./homepage.html">Service</a></li>
-        <li><a href="./destinations.html">Destinations</a></li>
-        <li><a href="./TravelTips.html">Travel Tips</a></li>
-        <li><a href="./Blogs.html">Blogs</a></li>
-        <li><a href="#">About us</a></li>
+      <li><a href="#">Home</a></li>
+      <li><a href="./Tours.html">Tours</a></li>
+      <li><a href="#services">Service</a></li>
+      <li><a href="./destinations.html">Destinations</a></li>
+      <li><a href="./TravelTips.html">Travel Tips</a></li>
+      <li><a href="./Blogs.html">Blogs</a></li>
+      <li><a href="./Aboutus.html">About us</a></li>
+      <li><a href="./contact.html">Contact us</a></li>
       <li><a href="#" class="action_btn">Register Now</a></li>
     </div>
 
   </header>
 
-  <main>
-    <section class="contact" id="contact">
-      <div class="center">
-          <h3>Contact As Here!</h3>
+  <div class="contact-form">
+    <form id="contactForm">
+      <h1>Contact Us</h1>
+      <h3>Please complete the form below</h3>
+      <hr class="horizontal-line">
+      <div class="input-group">
+        <label for="name">Name: <br> Add your names</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="input-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="input-group">
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+      <div class="input-group">
+        <label for="website">Website:</label>
+        <input type="url" id="website" name="website" required>
+      </div>
+      <div class="input-group">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
       </div>
 
-      <div class="contact-form">
-          <form action="">
-              <input type="text" placeholder="Your Full Name" required>
-              <input type="temail" placeholder="Your Email Address" required>
-              <textarea name="" id="" cols="30" rows="10" placeholder="Type your message" required></textarea>
-              <input type="submit" name="" value="send" class="send-btn">
-          </form>
+      <h2>Choose Gender</h2>
+      <div class="input-group">
+        <label>Male</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label>Female</label>
+        <input type="radio" id="female" name="gender" value="female">
       </div>
-   </section>
-  </main>
 
+      <h2>Select Your Hobbies</h2>
+      <div class="input-group">
+        <label>Reading</label>
+        <input type="checkbox" id="lesson1" name="lessons" value="lesson1">
+        <label>Playing</label>
+        <input type="checkbox" id="lesson2" name="lessons" value="lesson2">
+        <label>Traveling</label>
+        <input type="checkbox" id="lesson3" name="lessons" value="lesson3">
+      </div>
+
+      <div class="input-group">
+        <button type="submit">Send</button>
+        <button type="button" id="cancelButton">Cancel</button>
+      </div>
+    </form>
+  </div>
   <footer>
     <div class="address">
       <p>Our Terms and Conditions</p>
-      <p>FAQ |  Support</p>
+      <p>FAQ | Support</p>
     </div>
     <div class="copyright">
       <p>
         Kigali, Rwanda &copy; 2023 DreamScapeTrips | All rights reserved. <br>
-        Website Design |Graphic Design | Social Media Management | Online Marketing | Web App Developer 
+        Website Design |Graphic Design | Social Media Management | Online Marketing | Web App Developer
       </p>
     </div>
     <div class="social-links">
@@ -100,20 +143,7 @@
     </div>
   </footer>
 
-  <script>
-    const toggleBtn = document.querySelector('.toggle_btn')
-    const toggleBtnIcon = document.querySelector('.toggle_btn i')
-    const dropDownMenu = document.querySelector('.dropdown_menu')
-
-    toggleBtn.onclick = function () {
-      dropDownMenu.classList.toggle('open')
-      const isOpen = dropDownMenu.classList.contains('open')
-
-      toggleBtnIcon.classList = isOpen
-        ? 'fa-solid fa-xmark'
-        : 'fa-solid fa-bars'
-    } 
-  </script>
+  <script src="contact.js"></script>
 </body>
 
 </html>
