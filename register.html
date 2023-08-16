@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="./destinations.css">
+  <link rel="stylesheet" href="./register.css">
   <title>DSTrips</title>
 </head>
 
@@ -24,7 +24,7 @@
 
       <ul class="links">
         <li><a href="./homepage.html">Home</a></li>
-        <li><a href="/Promotions.html">Promotions</a></li>
+        <li><a href="./Promotions.html">Promotions</a></li>
         <li><a href="./homepage.html">Service</a></li>
         <li class="dropdown">
           <a href="./destinations.html">Destinations <i class="fa-solid fa-circle-chevron-down"></i></a>
@@ -47,7 +47,7 @@
         <li><a href="./Aboutus.html">About us</a></li>
         <li><a href="./contact.html">Contact us</a></li>
       </ul>
-      <a href="./register.html" class="action_btn">Register Now</a>
+      <a href="#" class="action_btn">Register Now</a>
       <div class="toggle_btn">
         <i class="fa-solid fa-bars"></i>
       </div>
@@ -62,24 +62,61 @@
       <li><a href="./Blogs.html">Blogs</a></li>
       <li><a href="./Aboutus.html">About us</a></li>
       <li><a href="./contact.html">Contact us</a></li>
-      <li><a href="./register.html" class="action_btn">Register Now</a></li>
+      <li><a href="#" class="action_btn">Register Now</a></li>
     </div>
 
   </header>
 
-  <main>
-    hello
-  </main>
+  <div class="contact-form">
+    <form id="contactForm">
+      <h1>REGISTRATION FORM</h1>
+      <h3>Please Register from below form to become a member</h3>
+      <hr class="horizontal-line">
+      <div class="input-group">
+        <label for="name">Name: <br> Add your names</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="input-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="input-group">
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
 
+      <h2>Choose Gender</h2>
+      <div class="input-group">
+        <label>Male</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label>Female</label>
+        <input type="radio" id="female" name="gender" value="female">
+      </div>
+
+      <h2>Select Your Hobbies</h2>
+      <div class="input-group">
+        <label>Reading</label>
+        <input type="checkbox" id="lesson1" name="lessons" value="lesson1">
+        <label>Playing</label>
+        <input type="checkbox" id="lesson2" name="lessons" value="lesson2">
+        <label>Traveling</label>
+        <input type="checkbox" id="lesson3" name="lessons" value="lesson3">
+      </div>
+
+      <div class="input-group">
+        <button type="submit">Register Now</button>
+      </div>
+    </form>
+  </div>
   <footer>
     <div class="address">
       <p>Our Terms and Conditions</p>
-      <p>FAQ |  Support</p>
+      <p>FAQ | Support</p>
     </div>
     <div class="copyright">
       <p>
         Kigali, Rwanda &copy; 2023 DreamScapeTrips | All rights reserved. <br>
-        Website Design |Graphic Design | Social Media Management | Online Marketing | Web App Developer 
+        Website Design |Graphic Design | Social Media Management | Online Marketing | Web App Developer
       </p>
     </div>
     <div class="social-links">
@@ -96,21 +133,6 @@
       </p>
     </div>
   </footer>
-
-  <script>
-    const toggleBtn = document.querySelector('.toggle_btn')
-    const toggleBtnIcon = document.querySelector('.toggle_btn i')
-    const dropDownMenu = document.querySelector('.dropdown_menu')
-
-    toggleBtn.onclick = function () {
-      dropDownMenu.classList.toggle('open')
-      const isOpen = dropDownMenu.classList.contains('open')
-
-      toggleBtnIcon.classList = isOpen
-        ? 'fa-solid fa-xmark'
-        : 'fa-solid fa-bars'
-    } 
-  </script>
 </body>
 
 </html>
