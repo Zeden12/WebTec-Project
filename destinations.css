@@ -16,7 +16,7 @@
 }
 
 body{
-  height: 100vh;
+  height: 50vh;
   background-color: var(--bg-color);
   color: var(--text-color);
   background-image: url('https://images.unsplash.com/photo-1689890076926-afb4add0bc86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
@@ -127,6 +127,52 @@ header{
 
 /* text */
 
+/* Reset some default styles */
+body, h1 {
+  margin: 0;
+  padding: 0;
+}
+
+/* Center-align container vertically and horizontally */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-color: #f0f0f0;
+}
+
+/* Style the title */
+h1 {
+  font-size: 36px;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Style the moving images container */
+.moving-images {
+  display: flex;
+  overflow: hidden;
+}
+
+/* Style individual images */
+.moving-images img {
+  width: 100%; /* Make images fill the container horizontally */
+  height: auto; /* Maintain aspect ratio */
+  animation: moveLeft 5s linear infinite;
+}
+
+/* Animation to move the images from right to left */
+@keyframes moveLeft {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
 
 
 span{
