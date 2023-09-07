@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "root";     
-$password = "";      
-$dbname = "registernew"; 
+$username = "root";
+$password = "";
+$dbname = "registernew";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -12,33 +12,37 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if(isset($_POST['register'])) {
+if (isset($_POST['register'])) {
     $username = $_POST["username"];
     $email = $_POST["email"];
     $phone = $_POST["phone"];
     $birthday = $_POST["birthday"];
     $password = $_POST["password"];
 
-    // Hash the password 
+    // Hash the password
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
     $sql = "INSERT INTO newuser (username, email, phone, birthday, password)
             VALUES ('$username', '$email', '$phone', '$birthday', '$hashed_password')";
 
     if ($conn->query($sql) === TRUE) {
-        // echo "Registration successful!";
+        // Registration successful!
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 }
 
-if(isset($_POST['delete'])) {
+if (isset($_POST['delete'])) {
     $id = $_POST["delete_id"];
 
     $sql = "DELETE FROM newuser WHERE id = '$id'";
 
     if ($conn->query($sql) === TRUE) {
-        // echo "User deleted successfully!";
+        // User deleted successfully!
+        
+        // Adjust user IDs after deletion
+        $adjust_sql = "ALTER TABLE newuser AUTO_INCREMENT = 1";
+        $conn->query($adjust_sql);
     } else {
         echo "Error deleting user: " . $conn->error;
     }
@@ -93,6 +97,6 @@ $conn->close();
         }
         ?>
     </table>
-
 </body>
 </html>
+
