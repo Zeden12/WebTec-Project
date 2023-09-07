@@ -125,7 +125,7 @@ header{
   justify-content: center;
 }
 
-.contact-form {
+/* .contact-form {
   background-color: #b2aaaa;
   padding: 20px;
   margin: 50px auto;
@@ -201,7 +201,90 @@ button {
   cursor: pointer;
   margin-top: 3rem;
   margin-left: 22rem;
+} */
+
+.wrapper{
+  width: 500px;
+  height: 710px;
+  padding: 2rem 3rem;
+  margin: 50px auto;
+  margin-bottom: 10px;
+  background-color: rgb(101, 101, 101);
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 10px 10px rgb(19, 209, 67);
 }
+h1{
+  font-size: 2.5rem;
+  color: rgb(54, 53, 53);
+  margin-bottom: 0.5rem;
+}
+form input{
+  align-items: right;
+  width: 90%;
+  outline: none;
+  padding: 8px 15px;
+  margin: 10px;
+  margin-bottom: 9px;
+  border-radius: 15px;
+}
+#butto{
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  padding: 10px 0px;
+  border-radius: 15px;
+  outline: none;
+  border: none;
+  width: 90%;
+  cursor: pointer;
+}
+.button1{
+  padding: 10px 10px;
+  background-color: transparent;
+  border: 1px solid rgb(19, 209, 67);
+  border-radius: 15px;
+  color: black;
+  outline: none;
+  transition: .6s ease;
+  box-sizing: border-box;
+  width: 150px;
+}
+button:hover{
+  cursor: pointer;
+  background-color:  rgb(19, 209, 67);
+  color: rgb(4, 4, 4);
+  box-shadow: 0 0 2px  rgb(19, 209, 67), 0 0 2px  rgb(19, 209, 67);
+  font-weight: bold;
+}
+input:focus{
+  border: rgb(19, 209, 67);
+}
+.terms{
+  margin-top: 0.8rem;
+}
+.terms input{
+  height: 1rem;
+  width: 2rem;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.terms label{
+  font-size: 0.9rem;
+}
+.terms a{
+  color: rgb(19, 209, 67);
+  text-decoration: none;
+}
+.member{
+  font-size: 0.9rem;
+  margin-top: 0.4rem;
+  color: black;
+}
+.member a{
+  color: rgb(19, 209, 67);
+  text-decoration: none;
+}
+
 /* footer */
 
 

@@ -15,8 +15,8 @@
   --p-font: 1rem;
 }
 
-body{
-  height: 50vh;
+body {
+  height: 100vh; 
   background-color: var(--bg-color);
   color: var(--text-color);
   background-image: url('https://images.unsplash.com/photo-1689890076926-afb4add0bc86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
@@ -125,55 +125,63 @@ header{
   justify-content: center;
 }
 
-/* text */
-
-/* Reset some default styles */
-body, h1 {
-  margin: 0;
-  padding: 0;
-}
-
-/* Center-align container vertically and horizontally */
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 90vh;
-  background-color: #f0f0f0;
-}
-
-/* Style the title */
-h1 {
-  font-size: 36px;
-  color: #333;
+header {
+  color: #fff;
   text-align: center;
+  padding: 15px;
+}
+
+.image-scroll {
+  overflow-x: scroll;
+  white-space: nowrap;
+}
+
+.image-container {
+  display: inline-block;
+  padding: 10px;
+}
+
+.image-container img {
+  max-width: 300px;
+  height: auto;
+  margin-right: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.destination-info {
+  padding: 20px;
+  text-align: justify;
+}
+
+.destination {
   margin-bottom: 20px;
 }
 
-/* Style the moving images container */
-.moving-images {
-  display: flex;
-  overflow: hidden;
+.destination h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-/* Style individual images */
-.moving-images img {
-  width: 100%; /* Make images fill the container horizontally */
-  height: auto; /* Maintain aspect ratio */
-  animation: moveLeft 5s linear infinite;
+.destination-info{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-/* Animation to move the images from right to left */
-@keyframes moveLeft {
-  0% {
-      transform: translateX(100%);
-  }
-  100% {
-      transform: translateX(-100%);
-  }
+
+.tip {
+  background-color: rgb(121, 120, 120);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
+.tip h2 {
+  font-size: var(--h2-font);
+  margin-bottom: 10px;
+  color: var(--main-color);
+}
 
 span{
   color: var(--main-color);
@@ -187,7 +195,7 @@ footer {
   align-items: center;
   text-align: center;
   color: white;
-  margin-top: 66.3vh;
+  margin-top: 18vh;
   line-height: 1.8rem;
   backdrop-filter: blur(200px);
 }

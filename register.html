@@ -15,6 +15,7 @@
     rel="stylesheet">
   <link rel="stylesheet" href="./register.css">
   <title>DSTrips</title>
+
 </head>
 
 <body>
@@ -29,18 +30,15 @@
         <li class="dropdown">
           <a href="./destinations.html">Destinations <i class="fa-solid fa-circle-chevron-down"></i></a>
           <ul class="dropdown-content">
-            <li><a href="#">Rwanda</a></li>
+            <li><a href="./rwanda.html">Rwanda</a></li>
             <li><a href="#">Congo</a></li>
             <li><a href="#">Uganda</a></li>
-            <li><a href="#">Asia</a></li>
-            <li><a href="#">Europe</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="./TravelTips.html">Travel Tips <i class="fa-solid fa-circle-chevron-down"></i></a>
           <ul class="dropdown-content">
-            <li><a href="#">Guides</a></li>
-            <li><a href="#">Visa</a></li>
+            <li><a href="./visa.html">Guides & Visa</a></li>
           </ul>
         </li>
         <li><a href="./Blogs.html">Blogs</a></li>
@@ -67,8 +65,30 @@
 
   </header>
 
-  <div class="contact-form">
-    <form action="register.php" method="post" id="contactForm">
+  <div class="wrapper">
+    <Form Class="signup_form">
+        <H1>REGISTER HERE</H1>
+        <Input Type="text" Name="full_name" placeholder="Create User name" Id="full_name" required/>
+        <Input Type="Email" Name="Email" placeholder="enter your email" Id="Email" required />
+        <Input Type="Email" Name="Email" placeholder="enter your Phone" Id="Email" required />
+        <Input Type="Email" Name="Email" placeholder="enter your Birthday" Id="Email" required />
+        <Input Type="Password" Name="Password" placeholder="enter new password" Id="Password" required/>
+        <Input Type="Password" Name="Comfirm_password" placeholder="confirm password" Id="Comfirm_Password" required />
+        <div class="terms">
+            <input type="checkbox" id="checkbox">
+            <label for="checkbox">I agree to <a href="#">Terms & Conditions</a></label>
+        </div>
+        <section id="butto">
+            <button type="submit" class="button1">Register</button>
+        </section>
+        <div class="member">
+            Alreaddy have an account? <a href="/login.html">Login</a>
+        </div>
+      </Form>
+</div>
+
+  <!-- <div class="contact-form">
+    <form action="conne.php" method="post" id="contactForm">
       <h1>REGISTRATION FORM</h1>
       <h3>Please Register from below form to become a member</h3>
       <hr class="horizontal-line">
@@ -94,10 +114,10 @@
       </div>
 
       <div class="input-group">
-        <button type="submit">Register Now</button>
+        <button type="submit" name="submit">Register Now</button>
       </div>
     </form>
-  </div>
+  </div> -->
   <footer>
     <div class="address">
       <p>Our Terms and Conditions</p>

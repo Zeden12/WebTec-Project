@@ -15,8 +15,8 @@
   --p-font: 1rem;
 }
 
-body{
-  height: 100vh;
+body {
+  height: 100vh; 
   background-color: var(--bg-color);
   color: var(--text-color);
   background-image: url('https://images.unsplash.com/photo-1689890076926-afb4add0bc86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80');
@@ -125,8 +125,6 @@ header{
   justify-content: center;
 }
 
-/* text */
-
 header {
   color: #fff;
   text-align: center;
@@ -138,23 +136,39 @@ h1 {
   margin-bottom: 0.5rem;
 }
 
-.faq {
-  background-color: #a19797;
+p {
+  font-size: 1.2rem;
+}
+
+section {
   margin: 20px;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.faq h2 {
+h2 {
   font-size: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 10px;
 }
 
-.faq-item {
-  margin-bottom: 1rem;
+.attraction,
+.culture {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.faq-item h3 {
+.attraction img,
+.culture img {
+  width: 45%;
+  max-width: 300px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+h3 {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
 }
@@ -171,7 +185,7 @@ footer {
   align-items: center;
   text-align: center;
   color: white;
-  margin-top: 66.3vh;
+  margin-top: 18vh;
   line-height: 1.8rem;
   backdrop-filter: blur(200px);
 }

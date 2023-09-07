@@ -53,6 +53,7 @@ header{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  backdrop-filter: blur(200px);
 }
 
 .navbar .logo a{
@@ -127,7 +128,57 @@ header{
 
 /* text */
 
+header {
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
 
+header h1 {
+  font-size: 500;
+  margin-bottom: 10px;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.blog-card {
+  display: flex;
+  margin-bottom: 20px;
+  background-color: rgb(122, 120, 120);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.image {
+  flex: 1;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+}
+
+.content {
+  flex: 2;
+  padding: 20px;
+}
+
+.content h2 {
+  font-size: var(--h2-font);
+  margin-bottom: 10px;
+  color: var(--main-color);
+}
+
+.content p {
+  font-size: var(--p-font);
+  margin-bottom: 10px;
+  color: var(--bg-color);
+}
 
 span{
   color: var(--main-color);
@@ -141,7 +192,7 @@ footer {
   align-items: center;
   text-align: center;
   color: white;
-  margin-top: 66.3vh;
+  margin-top: 15vh;
   line-height: 1.8rem;
   backdrop-filter: blur(200px);
 }
@@ -156,51 +207,6 @@ footer {
   margin: 0;
 }
 
-/* about us */
-
-.center{
-  text-align: center;
-}
-.center h3{
-  color: var(--text-color);
-  font-size: 30px;
-  font-weight: 300;
-  letter-spacing: 6px;
-}
-.service-content{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, auto));
-  grid-gap: 2rem;
-  align-items: center;
-  margin-top: 4.4rem;
-  backdrop-filter: blur(30px);
-}
-.row{
-  padding: 60px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all .40s;
-}
-.row i{
-  color: var(--main-color);
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-.row h3{
-  font-size: 1.25rem;
-  font-weight: 500;
-  margin-bottom: 20px;
-  color: var(--text-color);
-}
-.row p{
-  font-size: 18px;
-  color: var(--2nd-main-color);
-  line-height: 30px;
-}
-.row:hover{
-  transform: translateY(-15px);
-  box-shadow: 0px 15px 30px 0px rgb(red, green, blue);
-}
 
 .dropdown-content {
   display: none;
