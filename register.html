@@ -45,14 +45,14 @@
         <li><a href="./Aboutus.html">About us</a></li>
         <li><a href="./contact.html">Contact us</a></li>
       </ul>
-      <a href="#" class="action_btn">Register Now</a>
+      <a href="./login.html" class="action_btn">Sign In</a>
       <div class="toggle_btn">
         <i class="fa-solid fa-bars"></i>
       </div>
     </div>
 
     <div class="dropdown_menu">
-      <li><a href="#">Home</a></li>
+      <li><a href="./index.html">Home</a></li>
       <li><a href="./Promotions.html">Promotions</a></li>
       <li><a href="./index.html">Service</a></li>
       <li><a href="./destinations.html">Destinations</a></li>
@@ -60,32 +60,32 @@
       <li><a href="./Blogs.html">Blogs</a></li>
       <li><a href="./Aboutus.html">About us</a></li>
       <li><a href="./contact.html">Contact us</a></li>
-      <li><a href="#" class="action_btn">Register Now</a></li>
+      <a href="./login.html" class="action_btn">Sign In</a>
     </div>
 
   </header>
 
   <div class="wrapper">
-    <Form Class="signup_form">
-        <H1>REGISTER HERE</H1>
-        <Input Type="text" Name="full_name" placeholder="Create User name" Id="full_name" required/>
-        <Input Type="Email" Name="Email" placeholder="enter your email" Id="Email" required />
-        <Input Type="Email" Name="Email" placeholder="enter your Phone" Id="Email" required />
-        <Input Type="Email" Name="Email" placeholder="enter your Birthday" Id="Email" required />
-        <Input Type="Password" Name="Password" placeholder="enter new password" Id="Password" required/>
-        <Input Type="Password" Name="Comfirm_password" placeholder="confirm password" Id="Comfirm_Password" required />
-        <div class="terms">
-            <input type="checkbox" id="checkbox">
-            <label for="checkbox">I agree to <a href="#">Terms & Conditions</a></label>
-        </div>
-        <section id="butto">
-            <button type="submit" class="button1">Register</button>
-        </section>
-        <div class="member">
-            Alreaddy have an account? <a href="/login.html">Login</a>
-        </div>
-      </Form>
-</div>
+    <form action="register.php" method="POST" class="signup_form">
+      <h1>REGISTER HERE</h1>
+      <input type="text" name="username" placeholder="Create User name" id="full_name" required />
+      <input type="email" name="email" placeholder="Enter your email" id="email" required />
+      <input type="text" name="phone" placeholder="Enter your Phone" id="phone" required />
+      <input type="date" name="birthday" id="birthday" required />
+      <input type="password" name="password" placeholder="Enter new password" id="password" required />
+      <input type="password" name="confirm_password" placeholder="Confirm password" id="confirm_password" required />
+      <div class="terms">
+        <input type="checkbox" id="checkbox" name="terms" required>
+        <label for="checkbox">I agree to <a href="#">Terms & Conditions</a></label>
+      </div>
+      <section id="butto">
+        <button type="submit" class="button1" name="register">Register</button>
+      </section>
+      <div class="member">
+        Already have an account? <a href="/login.html">Login</a>
+      </div>
+    </form>
+  </div>
 
   <footer>
     <div class="address">

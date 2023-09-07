@@ -1,137 +1,98 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "Register");
+$servername = "localhost";
+$username = "root";     
+$password = "";      
+$dbname = "registernew"; 
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
+if(isset($_POST['register'])) {
+    $username = $_POST["username"];
+    $email = $_POST["email"];
+    $phone = $_POST["phone"];
+    $birthday = $_POST["birthday"];
+    $password = $_POST["password"];
 
-// Declare the button value
-if (isset($_POST['submitform'])) {
+    // Hash the password 
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-    // Prepare and bind the data to be inserted
-    $name = $_POST['name'];
-$email = $_POST['email'];
-$phone = $_POST['phone'];
-$birth = $_POST['birth'];
-$sex = $_POST['sex'];
+    $sql = "INSERT INTO newuser (username, email, phone, birthday, password)
+            VALUES ('$username', '$email', '$phone', '$birthday', '$hashed_password')";
 
-    // Create insertion query
-     $INSERT = "INSERT INTO  `registration`(`User_Name`, `User_Email`, `User_Phone`, `User_BD`,` User_Sex`) 
-    VALUES ('$name', '$email', '$phone', '$birth', '$sex')";
-
-    
-    $query = mysqli_query($conn, $INSERT);
-    
-    if ($query) {
-        echo "Data inserted successfully!"; 
-        header("Location: success.php");
-        exit();
-
+    if ($conn->query($sql) === TRUE) {
+        // echo "Registration successful!";
     } else {
-
-        echo "Error: " . mysqli_error($conn);
+        echo "Error: " . $sql . "<br>" . $conn->error;
     }
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
 }
+
+if(isset($_POST['delete'])) {
+    $id = $_POST["delete_id"];
+
+    $sql = "DELETE FROM newuser WHERE id = '$id'";
+
+    if ($conn->query($sql) === TRUE) {
+        // echo "User deleted successfully!";
+    } else {
+        echo "Error deleting user: " . $conn->error;
+    }
+}
+
+// Fetch all registered users from the database
+$sql = "SELECT * FROM newuser";
+$result = $conn->query($sql);
+
+$conn->close();
 ?>
+
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>All user registered</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registered Users</title>
+    <link rel="stylesheet" href="regist.css">
 </head>
-
 <body>
-<style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
+    <h1>Registered Users to DreamScapeTrips</h1>
 
-        table, th, td {
-            border: 1px solid black;
-        }
-
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-        .head {
-    display: flex;
-    height:10vh;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-
-.head h2 {
-    margin: 0; /* Remove default margin from the h2 element */
-    font-size: 24px; /* Adjust font size as needed */
-}
-
-.head a {
-    text-decoration: none; /* Remove underline from the link */
-    background-color: #0056b3; /* Button background color */
-    color: #fff; /* Button text color */
-    padding: 10px 20px; /* Button padding */
-    border-radius: 5px; /* Rounded corners for the button */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
-}
-
-.head a:hover {
-    background-color: #0056b3; /* Button background color on hover */
-}
-
-      
-    </style>
-<div class="head">
-    <div> <h2>All user registered</h2></div>
-    <div> <a href="register.html"> Register new</a> </div>
-</div>
-    <table border="1">
-
+    <table>
         <tr>
             <th>ID</th>
-            <th>Name</th>
+            <th>Username</th>
             <th>Email</th>
             <th>Phone</th>
-            <th>BirthDay</th>
-            <th>Sex</th>
+            <th>Birthday</th>
+            <th>Action</th>
         </tr>
         <?php
-        // SQL query to select all data from the "perfect" table
-        $SELECT = "SELECT * FROM `registration`";
-        $result = mysqli_query($conn, $SELECT);
-
-        if (!$result) {
-            die("Error: " . mysqli_error($conn));
-        }
-
-        // Loop through the rows of data and display them in the table
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo "<tr>";
-            echo "<td>" . $row['id'] . "</td>";
-            echo "<td>" . $row['User_Name'] . "</td>";
-            echo "<td>" . $row['User_Email'] . "</td>";
-            echo "<td>" . $row['User_Phone'] . "</td>";
-            echo "<td>" . $row['User_BD'] . "</td>";
-            echo "<td>" . $row['User_Sex'] . "</td>";
-            echo "</tr>";
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . $row['id'] . "</td>";
+                echo "<td>" . $row['username'] . "</td>";
+                echo "<td>" . $row['email'] . "</td>";
+                echo "<td>" . $row['phone'] . "</td>";
+                echo "<td>" . $row['birthday'] . "</td>";
+                echo "<td>
+                        <form method='POST'>
+                            <input type='hidden' name='delete_id' value='" . $row['id'] . "'>
+                            <button type='submit' name='delete' class='delete-btn'>Delete</button>
+                        </form>
+                    </td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='6'>No registered users</td></tr>";
         }
         ?>
     </table>
+
 </body>
-
 </html>
-
-<?php
-mysqli_close($conn);
-?>

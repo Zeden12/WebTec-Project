@@ -13,8 +13,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
-  <link rel="stylesheet" href="./about.css">
+  <link rel="stylesheet" href="./login.css">
   <title>DSTrips</title>
+
 </head>
 
 <body>
@@ -24,12 +25,12 @@
 
       <ul class="links">
         <li><a href="./index.html">Home</a></li>
-        <li><a href="/Promotions.html">Promotions</a></li>
+        <li><a href="./Promotions.html">Promotions</a></li>
         <li><a href="./index.html">Service</a></li>
         <li class="dropdown">
           <a href="./destinations.html">Destinations <i class="fa-solid fa-circle-chevron-down"></i></a>
           <ul class="dropdown-content">
-            <li><a href="rwanda.html">Rwanda</a></li>
+            <li><a href="./rwanda.html">Rwanda</a></li>
             <li><a href="#">Congo</a></li>
             <li><a href="#">Uganda</a></li>
           </ul>
@@ -64,42 +65,23 @@
 
   </header>
 
-  <main>
-    <!--start About me page-->
-    <div class="about">
-      <h1> WHY TRAVEL WITH DREAMSCAPETRIPS?</h1>
-      <h3>Welcome to Dream<span>Scape</span>Trips. We are passionate about creating unforgettable travel experiences for
-        our customers.</h3>
-      <p>
-        Dream<span>Scape</span>Trips is your trusted and reliable ground tour operator based in Kigali-Rwanda. We pride
-        ourselves as a premier travel company in East Africa <br>
-        specializing in organizing unforgettable mountain gorilla trekking safaris to Volcanoes National Park and other
-        wildlife safaris in Rwanda. At Dream<span>Scape</span>Trips<br>
-        we don’t restrict visitor exploration because we avail you a great opportunity to discover iconic tourist sites
-        that make Rwanda one of Africa’s premier safari destination. <br>
-        We are fully registered and recognized tour company which makes us the genuine service provider, a good reason
-        most travelers have considered us for their travel needs﻿.
-      </p>
-      <h2> TEAM</h2>
-    </div>
-    <section class="team-members">
-      <div class="member">
-        <img src="./assets/me.png" alt="Member 1">
-        <h2>Eresnt HAGUMA KWIZERA</h2>
-        <p>Travel Specialist</p>
+  <div class="wrapper">
+    <Form Class="Form-1">
+      <H1>Login</H1>
+      <Input Type="text" Name="Username" placeholder="Enter username" Id="Username" required />
+      <Input Type="Email" Name="Email" placeholder="Enter your email" Id="Email" required />
+      <Input Type="Password" Name="Password" placeholder="Enter password" Id="Password" required />
+      <div id="forgot">
+        <p><a href="#">forgot password?</a></span></p>
       </div>
+      <section id="butto">
+        <input type="submit" value="login" class="button1">
+      </section>
       <div class="member">
-        <img src="./assets/fab.jpeg" alt="Member 2">
-        <h2>Fabrice MUHIRWA</h2>
-        <p>Tour guider</p>
+        if you don't have account   <a href="/register.html">Register Here</a>
       </div>
-      <div class="member">
-        <img src="./assets/benja.png" alt="Member 3">
-        <h2>Benjamin IRADUKUNDA</h2>
-        <p>Adventure Expert</p>
-      </div>
-    </section>
-  </main>
+    </Form>
+  </div>
 
   <footer>
     <div class="address">
@@ -126,21 +108,6 @@
       </p>
     </div>
   </footer>
-
-  <script>
-    const toggleBtn = document.querySelector('.toggle_btn')
-    const toggleBtnIcon = document.querySelector('.toggle_btn i')
-    const dropDownMenu = document.querySelector('.dropdown_menu')
-
-    toggleBtn.onclick = function () {
-      dropDownMenu.classList.toggle('open')
-      const isOpen = dropDownMenu.classList.contains('open')
-
-      toggleBtnIcon.classList = isOpen
-        ? 'fa-solid fa-xmark'
-        : 'fa-solid fa-bars'
-    } 
-  </script>
 </body>
 
 </html>
